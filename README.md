@@ -117,7 +117,7 @@ Akagu Cipher String
 
 ## Architecture
 
-Below is the system architecture for the Temperature Converter API:
+Below is the system architecture for the Izugbe Tri-Core Engine:
 
 ![System Architecture](./architecture.excalidraw.svg)
 

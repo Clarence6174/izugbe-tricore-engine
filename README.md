@@ -86,32 +86,7 @@ Returns all 36 Akagu SVG glyphs keyed by Izugbe letter.
 
 ---
 
-## Pipeline Architecture
 
-```
-Input
-  │
-  ▼
-Core 1 — Normalizer
-  • Lowercase + strip
-  • English-keyboard subs: oo→ọ, ii→ị, ng→ṅ, qu→kw, c(?!h)→k …
-  • Foreign-name detection (English suffixes, consonant clusters)
-  • Phonotactics warnings (3+ consonant runs, non-Igbo finals)
-  │
-  ▼
-Core 2 — Validator (Dị Ọcha)
-  • Symbol membership: all 36 Onwu phonemes
-  • Vowel harmony: Light {a,ị,ọ,ụ} vs Heavy {e,i,o,u}
-  │
-  ▼
-Core 3 — Encoder
-  • Digraph-first greedy match (ch,gb,gh,gw,kp,kw,nw,ny,sh)
-  • Maps every phoneme to its Akagu Unicode codepoint
-  • Yields one PhonemeToken at a time (supports streaming)
-  │
-  ▼
-Akagu Cipher String
-```
 
 ---
 
